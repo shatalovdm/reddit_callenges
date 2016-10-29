@@ -14,21 +14,21 @@ class Kaprekar
 		final_array
 	end
 
-	# Write a function that, given a 4-digit number, returns the largest digit in that number. 
+	# A function that, given a 4-digit number, returns the largest digit in that number. 
 	# Numbers between 0 and 999 are counted as 4-digit numbers with leading 0's.
 
 	def largest_digit(input)
 		create_array(input).max.to_i
 	end
 
-	# Write a function that, given a 4-digit number, performs the "descending digits" operation.
+	# A function that, given a 4-digit number, performs the "descending digits" operation.
 	# This operation returns a number with the same 4 digits sorted in descending order.
 
 	def desc_digits(input)
 		create_array(input).sort.join.to_i
 	end
 
-	# Write a function that counts the number of iterations in Kaprekar's Routine
+	# A function that counts the number of iterations in Kaprekar's Routine
 
 	def kaprekar(input)
 		def aux (input, count)
@@ -48,5 +48,3 @@ class Kaprekar
 		aux(input, 0)
 	end
 end
-k = Kaprekar.new
-puts k.kaprekar(1234)
