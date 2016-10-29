@@ -4,12 +4,14 @@ class Kaprekar
 	def create_array(input)
 		input_splitted = input.to_s.split("")
 		final_array = []
-		if input_splitted.length < 4
-			final_array = (["0","0", "0"] + input_splitted).pop(4)
-		elsif input_splitted.length == 4
-			final_array = input_splitted
-		else 
-			raise "Wrong number"
+		begin 
+			if input_splitted.length < 4
+				final_array = (["0","0", "0"] + input_splitted).pop(4)
+			elsif input_splitted.length == 4
+				final_array = input_splitted
+			else
+				raise ArgumentError, "Error: You provided a wrong number."
+			end
 		end
 		final_array
 	end
@@ -32,11 +34,8 @@ class Kaprekar
 
 	def kaprekar(input)
 		def aux (input, count)
-			case input 
-			when 6174
+			if input == 6174
 				count
-			when 0
-				puts "Wrong number"
 			else
 				count += 1
 				array = input.to_s.split("").sort
