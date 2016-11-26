@@ -12,6 +12,8 @@ The program adjusts the word spacing so that the text is flush against both the 
 
 class TextReflow
 
+  attr_accessor :input_file, :line_width
+
   def initialize(input_file, line_width = 40)
     unless File.file?(input_file)
       raise IOError, "not found"
