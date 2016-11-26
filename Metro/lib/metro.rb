@@ -50,7 +50,7 @@ class Metro
 		puts "Error: File \"#{file}\" #{error.message}" 
   end
 
-  # Finds the route for from 'start' to 'finish' where user can make transfer at station 'route' if needed
+  # Finds the route from 'start' to 'finish' where user can make transfer at station 'route' if needed
   def find_route(start,finish,start_line,finish_line, visited, route, time)
     visited << start.name
     connection = start.connections.find {|connection| !visited.include?(connection.station.name)}
